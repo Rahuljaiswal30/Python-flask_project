@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,10 +6,9 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>{% block title  %}DTF APPLICATION{% endblock %}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/navbars/">
-
+    <title>{% block title %}title{% endblock %}</title>
     <!-- Bootstrap core CSS -->
 <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -33,6 +31,7 @@
     </style>
     <!-- Custom styles for this template -->
     <link href="/static/css/navbar.css" rel="stylesheet">
+    
   </head>
 <body>
 
@@ -62,7 +61,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdown09">
                     <a class="dropdown-item" href="/login">Login</a>
                     <a class="dropdown-item" href="/logout">Logout</a>
-                    <a class="dropdown-item" href="/signUp">Sign up</a>
+                    <a class="dropdown-item" href="/sign-up">Sign up</a>
                 </div>
                 </li>
             </ul>
@@ -74,14 +73,19 @@
 
     <main role="main">
         <div class="jumbotron">
-        <div class="col-sm-8 mx-auto">
-            <h1>Navbar examples</h1>
-            <p>This example is a quick exercise to illustrate how the navbar and its contents work. Some navbars extend the width of the viewport, others are confined within a <code>.container</code>. For positioning of navbars, checkout the <a href="/docs/4.3/examples/navbar-static/">top</a> and <a href="/docs/4.3/examples/navbar-fixed/">fixed top</a> examples.</p>
-            <p>At the smallest breakpoint, the collapse plugin is used to hide the links and show a menu button to toggle the collapsed content.</p>
-            <p>
-            <a class="btn btn-primary" href="/docs/4.3/components/navbar/" role="button">View navbar docs &raquo;</a>
-            </p>
-        </div>
+            <div class="col-sm-8 mx-auto">
+                <h1>Navbar examples</h1>
+                <p>This example is a quick exercise to illustrate how the navbar and its contents work. Some navbars extend the width of the viewport, others are confined within a <code>.container</code>. For positioning of navbars, checkout the <a href="/docs/4.3/examples/navbar-static/">top</a> and <a href="/docs/4.3/examples/navbar-fixed/">fixed top</a> examples.</p>
+                <p>At the smallest breakpoint, the collapse plugin is used to hide the links and show a menu button to toggle the collapsed content.</p>
+                <p>
+                <a class="btn btn-primary" href="/docs/4.3/components/navbar/" role="button">View navbar docs &raquo;</a>
+                </p>
+            </div>
+            <div>
+                {% block content%}
+                    Content here
+                {% endblock %}
+            </div>
         </div>
     </main>
     </div>
