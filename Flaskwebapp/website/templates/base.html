@@ -71,12 +71,33 @@
             </div>
         </nav>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+                    <div class="alert alert-danger alert-dismissable fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% else %}
+                    <div class="alert alert-success alert-dismissable fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <main role="main">
         <div class="jumbotron">
             <div class="col-sm-8 mx-auto">
                 <h1>Navbar examples</h1>
-                <p>This example is a quick exercise to illustrate how the navbar and its contents work. Some navbars extend the width of the viewport, others are confined within a <code>.container</code>. For positioning of navbars, checkout the <a href="/docs/4.3/examples/navbar-static/">top</a> and <a href="/docs/4.3/examples/navbar-fixed/">fixed top</a> examples.</p>
-                <p>At the smallest breakpoint, the collapse plugin is used to hide the links and show a menu button to toggle the collapsed content.</p>
+                <p>This example is a quick exercise to illustrate thin a <code>.container</code>. For positioning of navbars, checkout the <a href="/docs/4.3/examples/navbar-static/">top</a> and <a href="/docs/4.3/examples/navbar-fixed/">fixed top</a> examples.</p>
                 <p>
                 <a class="btn btn-primary" href="/docs/4.3/components/navbar/" role="button">View navbar docs &raquo;</a>
                 </p>
