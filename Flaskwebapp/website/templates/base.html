@@ -44,18 +44,21 @@
 
             <div class="collapse navbar-collapse" id="navbarsExample09">
             <ul class="navbar-nav mr-auto">
+                {% if user.is_authenticated %}
                 <li class="nav-item active">
                     <a class="nav-link" id="home" href="/">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="login" href="/login">login</a>
-                    </li>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" id="logout" href="/logout">Logout</a>
-                    </li>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" id="login" href="/login">login</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" id="signUp" href="/sign-up">Sign up</a>
-                    </li>
+                </li>
+                {% endif %}
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Authentication</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown09">
